@@ -34,20 +34,26 @@ const PizzaCard = ({ pizza }) => {
   const { addOrder } = useOrders();
 
   const confirmOrder = async () => {
-    const { base, sauce, cheese, meat, veggies, price } = pizza;
     try {
-      const userProfile = await getUserProfile();
-      const userId = userProfile._id;
+      const { base, sauce, cheese, meat, veggies, price } = pizza;
+      
+      // Validate required fields
+      if (!base || !sauce || !cheese || !meat || !price) {
+        alert('Invalid pizza data. Please try again.');
+        return;
+      }
+
       const newOrder = {
         base,
         sauce,
         cheese,
         meat,
-        veggies,
-        price,
-        status: 'Pending',
-        user: userId
+        veggies: veggies || [], // Ensure veggies is an array
+        price: Number(price) // Ensure price is a number
       };
+
+      console.log('🍕 Adding pizza to cart:', newOrder);
+      
       await addPizza(newOrder);
       addOrder(newOrder);
       handleCloseModal();
@@ -55,7 +61,8 @@ const PizzaCard = ({ pizza }) => {
         navigate("/dashboard");
       }, 200);
     } catch (error) {
-      alert('Failed to add pizza. Please try again.');
+      console.error('❌ Failed to add pizza:', error);
+      alert(error.message || 'Failed to add pizza. Please try again.');
     }
   };
 

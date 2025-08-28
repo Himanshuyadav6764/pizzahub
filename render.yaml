@@ -1,0 +1,44 @@
+services:
+  # Backend API Service
+  - type: web
+    name: pizzahub-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        fromDatabase:
+          name: pizzahub-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RAZORPAY_KEY_ID
+        value: rzp_test_1234567890abcd
+      - key: RAZORPAY_KEY_SECRET
+        value: 1234567890abcd1234567890abcd12
+      - key: EMAIL_USER
+        value: pizzahub.service@gmail.com
+      - key: EMAIL_PASS
+        value: pizzahub123
+      - key: PORT
+        value: 5000
+
+  # Frontend Service
+  - type: web
+    name: pizzahub-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_RAZORPAY_KEY_ID
+        value: rzp_test_1234567890abcd
+      - key: REACT_APP_API_URL
+        value: https://pizzahub-backend.onrender.com/api
+
+databases:
+  - name: pizzahub-db
+    databaseName: pizzadb
+    user: pizzahub-user

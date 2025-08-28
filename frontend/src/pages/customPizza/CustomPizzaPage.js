@@ -171,20 +171,26 @@ const CustomPizzaPage = () => {
     };
 
     const confirmOrder = async () => {
-        const { base, sauce, cheese, meat, veggies, price } = selection;
-        const userProfile = await getUserProfile();
-        const userId = userProfile._id;
-        const newOrder = {
-            base,
-            sauce,
-            cheese,
-            meat,
-            veggies,
-            price,
-            status: 'Pending',
-            user: userId
-        };
         try {
+            const { base, sauce, cheese, meat, veggies, price } = selection;
+            
+            // Validate required fields
+            if (!base || !sauce || !cheese || !meat || !price) {
+                alert('Please complete all pizza selections before confirming order.');
+                return;
+            }
+
+            const newOrder = {
+                base,
+                sauce,
+                cheese,
+                meat,
+                veggies: veggies || [], // Ensure veggies is an array
+                price: Number(price) // Ensure price is a number
+            };
+
+            console.log('🍕 Confirming order:', newOrder);
+            
             await addPizza(newOrder);
             addOrder(newOrder);
             closeModal();
@@ -192,7 +198,8 @@ const CustomPizzaPage = () => {
                 navigate("/dashboard");
             }, 200);
         } catch (error) {
-            alert('Failed to add pizza. Please try again.');
+            console.error('❌ Order confirmation failed:', error);
+            alert(error.message || 'Failed to add pizza. Please try again.');
         }
     };
 
