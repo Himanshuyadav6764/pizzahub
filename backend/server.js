@@ -12,7 +12,8 @@ const allowedOrigins = [
     'http://127.0.0.1:3000',
     'http://127.0.0.1:3001',
     'https://pizzahub-frontend.onrender.com',  // Production frontend
-    'https://pizzahub-admin.onrender.com'      // Production admin
+    'https://pizzahub-admin.onrender.com',     // Production admin
+    'https://pizzahub-55l6-git-master-himanshuyadav6764s-projects.vercel.app'  // Vercel frontend
 ];
 
 const corsOptions = {
@@ -53,6 +54,7 @@ mongoose.connect(process.env.MONGO_URI)
     });
 
 // Routes
+app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/payment', require('./routes/paymentRoutes'));
 app.use('/api/bases', require('./routes/baseRoutes'));
