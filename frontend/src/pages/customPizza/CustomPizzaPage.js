@@ -1,8 +1,7 @@
 import { getBases, getSauces, getCheeses, getVeggies, getMeats, addPizza } from '../../utils/pizzaApi';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useOrders } from '../../context/OrderContext';
 import { useNavigate } from 'react-router-dom';
-import { getUserProfile } from '../../utils/authApi';
 import img1 from "../../utils/images/Pizza-Base-5.jpg";
 import CustomPizzaModal from '../../components/customPizzaModal/CustomPizzaModal';
 import VeggiesSelection from '../../components/VeggieSelection';
@@ -63,16 +62,16 @@ const CustomPizzaPage = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const calculatePrice = () => {
+    const calculatePrice = useCallback(() => {
         let price = 0;
         const base = bases.find(b => b.name === selection.base);
         if (base) price += base.price || 0;
         return price;
-    };
+    }, [bases, selection.base]);
 
     useEffect(() => {
         setSelection(prev => ({ ...prev, price: calculatePrice() }));
-    }, [selection.base]);
+    }, [selection.base, calculatePrice]);
 
     const handleVeggieChange = (event) => {
         const { value, checked } = event.target;
@@ -91,37 +90,6 @@ const CustomPizzaPage = () => {
             console.log('New selection state:', newSelection); // Debug log
             return newSelection;
         });
-    };
-
-    const validateSelections = () => {
-        const { base, sauce, cheese, meat, veggies } = selection;
-
-        if (!base) {
-            alert('Please select a pizza base.');
-            return false;
-        }
-
-        if (!sauce) {
-            alert('Please select a pizza sauce.');
-            return false;
-        }
-
-        if (!cheese) {
-            alert('Please select a type of cheese.');
-            return false;
-        }
-
-        if (!meat) {
-            alert('Please select a type of meat.');
-            return false;
-        }
-
-        if (veggies.length === 0) {
-            alert('Please select at least one veggie.');
-            return false;
-        }
-
-        return true;
     };
 
     const handleSubmit = (event) => {

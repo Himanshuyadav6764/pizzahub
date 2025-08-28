@@ -7,7 +7,6 @@ import premiumBaseImage from '../utils/images/Pizza-Base-4.jpg';
 import classicBaseImage from '../utils/images/Pizza-Base-5.jpg';
 import CustomPizzaModal from '../components/customPizzaModal/CustomPizzaModal';
 import { addPizza } from '../utils/pizzaApi';
-import { getUserProfile } from '../utils/authApi';
 import { useOrders } from '../context/OrderContext';
 
 const baseImages = {

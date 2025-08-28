@@ -18,10 +18,10 @@ const SauceSelection = ({ sauces, selection, handleStepChange, handleSelectionCh
              <div className="relative flex flex-col items-center justify-center ">
                 {/* Emoji Decoration */}
                 <span className="absolute text-3xl -top-4 left-11 animate-bounce hidden sm:block"> 
-                <img src={sauce} className='sm:size-0 md:size-14  lg:size-16  rounded-full'/>
+                <img src={sauce} alt="Sauce decoration" className='sm:size-0 md:size-14  lg:size-16  rounded-full'/>
                 </span>
                 <span className="absolute text-3xl -top-4 right-11 animate-bounce hidden sm:block">
-                <img src={sauce} className='sm:size-0 md:size-14 lg:size-16  rounded-full'/>
+                <img src={sauce} alt="Sauce decoration" className='sm:size-0 md:size-14 lg:size-16  rounded-full'/>
                 </span>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-purple-500 to-red-500">
                 Choose a Sauce

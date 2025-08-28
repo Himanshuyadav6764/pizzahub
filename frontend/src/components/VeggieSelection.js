@@ -7,10 +7,10 @@ const VeggiesSelection = ({ veggieOptions, veggies, handleVeggieChange }) => {
              <div className="relative flex flex-col items-center justify-center ">
                 {/* Emoji Decoration */}
                 <span className="absolute text-3xl -top-4 left-11 animate-bounce hidden sm:block"> 
-                <img src={veggie} className='sm:size-0 md:size-14  lg:size-16  rounded-full'/>
+                <img src={veggie} alt="Veggie decoration" className='sm:size-0 md:size-14  lg:size-16  rounded-full'/>
                 </span>
                 <span className="absolute text-3xl -top-4 right-11 animate-bounce hidden sm:block">
-                <img src={veggie} className='sm:size-0 md:size-14 lg:size-16 rounded-full rotate-90'/>
+                <img src={veggie} alt="Veggie decoration" className='sm:size-0 md:size-14 lg:size-16 rounded-full rotate-90'/>
                 </span>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-green-500 to-red-700">
                 Choose Your Veggies

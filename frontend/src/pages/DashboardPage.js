@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getPizzaByUserId } from '../utils/pizzaApi';
-import { AiOutlineCloseCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import dayjs from 'dayjs';
 import Loader from '../components/loader/Loader';
 import DashboardModal from '../components/dashboardModal/DashboardModal';
