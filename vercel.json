@@ -21,7 +21,7 @@
   "outputDirectory": "frontend/build",
   "framework": "create-react-app",
   "env": {
-    "REACT_APP_API_URL": "https://your-backend-url/api",
+    "REACT_APP_API_URL": "https://pizzahub-5-j481.onrender.com/api",
     "REACT_APP_RAZORPAY_KEY_ID": "rzp_test_1234567890abcd"
   }
 }
