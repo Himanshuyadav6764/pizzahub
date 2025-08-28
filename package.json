@@ -1,0 +1,33 @@
+{
+  "name": "pizzahub-mern-app",
+  "version": "1.0.0",
+  "description": "Full-stack pizza delivery application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "build": "cd frontend && npm run build",
+    "deploy": "npm run install-all && npm run build",
+    "heroku-postbuild": "npm run install-all && npm run build"
+  },
+  "keywords": [
+    "pizza",
+    "delivery",
+    "mern",
+    "react",
+    "nodejs"
+  ],
+  "author": "Himanshuyadav6764",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^7.6.0"
+  }
+}
