@@ -5,6 +5,7 @@
 ### 🔧 **Step 1: Backend Service Setup**
 
 #### Service Configuration:
+
 - **Service Type:** Web Service
 - **Name:** `pizzahub-backend`
 - **Environment:** Node
@@ -12,6 +13,7 @@
 - **Start Command:** `cd backend && npm start`
 
 #### Environment Variables (Add in Render Dashboard):
+
 ```
 NODE_ENV=production
 PORT=5000
@@ -29,12 +31,14 @@ FRONTEND_URL=https://pizzahub-frontend.onrender.com
 ### 🌐 **Step 2: Frontend Service Setup**
 
 #### Service Configuration:
+
 - **Service Type:** Static Site
 - **Name:** `pizzahub-frontend`
 - **Build Command:** `cd frontend && npm install && npm run build`
 - **Publish Directory:** `frontend/build`
 
 #### Environment Variables (Add in Render Dashboard):
+
 ```
 REACT_APP_API_URL=https://pizzahub-backend.onrender.com/api
 REACT_APP_RAZORPAY_KEY_ID=rzp_test_1234567890abcd
@@ -47,6 +51,7 @@ REACT_APP_VERSION=1.0.0
 ## 📝 **How to Add Environment Variables in Render:**
 
 ### For Backend Service:
+
 1. Go to Render Dashboard
 2. Click on your backend service
 3. Go to "Environment" tab
@@ -59,8 +64,9 @@ REACT_APP_VERSION=1.0.0
    - And so on...
 
 ### For Frontend Service:
+
 1. Go to your frontend static site
-2. Go to "Environment" tab  
+2. Go to "Environment" tab
 3. Add variables:
    - **Key:** `REACT_APP_API_URL` → **Value:** `https://pizzahub-backend.onrender.com/api`
    - **Key:** `REACT_APP_RAZORPAY_KEY_ID` → **Value:** `rzp_test_1234567890abcd`
@@ -70,12 +76,14 @@ REACT_APP_VERSION=1.0.0
 ## 🔒 **Security Notes:**
 
 ### **Important - Change These Values:**
+
 1. **JWT_SECRET:** Generate a strong random string
 2. **RAZORPAY keys:** Use your actual Razorpay test/live keys
 3. **EMAIL credentials:** Use your actual email service
 4. **MONGO_URI:** Use your actual MongoDB connection string
 
 ### **Generate Strong JWT Secret:**
+
 ```bash
 # Run this in terminal to generate a strong secret:
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
@@ -86,6 +94,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ## ✅ **Deployment Checklist:**
 
 ### Before Deploying:
+
 - [ ] Update MongoDB URI with your actual database
 - [ ] Get real Razorpay keys from dashboard
 - [ ] Set up email service (Gmail App Password)
@@ -93,11 +102,13 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 - [ ] Update backend URL in frontend env
 
 ### After Backend Deploys:
+
 - [ ] Copy actual backend URL
 - [ ] Update `REACT_APP_API_URL` in frontend
 - [ ] Redeploy frontend with correct API URL
 
 ### Testing:
+
 - [ ] Backend URL shows "API is running"
 - [ ] Frontend URL shows complete website
 - [ ] Login/Register works

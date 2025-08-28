@@ -1,11 +1,13 @@
 # 🚀 Render Deployment Guide - PizzaHub MERN App
 
 ## 🎯 Overview:
+
 आपको दो अलग services बनानी होंगी Render पर:
 
 ## 1. 🔧 Backend Service (API Server)
 
 ### Service Settings:
+
 - **Name:** `pizzahub-backend`
 - **Type:** Web Service
 - **Environment:** Node
@@ -14,12 +16,14 @@
 - **Root Directory:** Leave empty
 
 ### Build & Deploy Settings:
+
 ```bash
 Build Command: cd backend && npm install
 Start Command: cd backend && npm start
 ```
 
 ### Environment Variables:
+
 ```
 NODE_ENV=production
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/pizzadb
@@ -32,6 +36,7 @@ PORT=5000
 ```
 
 ### Expected URL:
+
 `https://pizzahub-backend.onrender.com`
 
 ---
@@ -39,6 +44,7 @@ PORT=5000
 ## 2. 🌐 Frontend Service (Live Website)
 
 ### Service Settings:
+
 - **Name:** `pizzahub-frontend`
 - **Type:** Static Site
 - **Environment:** Static Site
@@ -47,18 +53,21 @@ PORT=5000
 - **Root Directory:** Leave empty
 
 ### Build Settings:
+
 ```bash
 Build Command: cd frontend && npm install && npm run build
 Publish Directory: frontend/build
 ```
 
 ### Environment Variables:
+
 ```
 REACT_APP_API_URL=https://pizzahub-backend.onrender.com/api
 REACT_APP_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ```
 
 ### Expected URL:
+
 `https://pizzahub-frontend.onrender.com`
 
 ---
@@ -66,18 +75,21 @@ REACT_APP_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ## 🔗 URLs की जानकारी:
 
 ### 👥 **Users के लिए (Live Website):**
+
 - **Main Website:** `https://pizzahub-frontend.onrender.com`
 - यहाँ complete PizzaHub website दिखेगी
 - Pizza ordering, login, registration, dashboard
 
 ### 🛠️ **Developers के लिए (API Testing):**
+
 - **API Base:** `https://pizzahub-backend.onrender.com/api`
 - यहाँ JSON responses दिखेंगे
 - API endpoints test कर सकते हैं
 
 ### 🧪 **API Endpoints Test करने के लिए:**
+
 - `GET https://pizzahub-backend.onrender.com/api/bases` - Get all bases
-- `GET https://pizzahub-backend.onrender.com/api/cheeses` - Get all cheeses  
+- `GET https://pizzahub-backend.onrender.com/api/cheeses` - Get all cheeses
 - `POST https://pizzahub-backend.onrender.com/api/auth/login` - Login
 - `POST https://pizzahub-backend.onrender.com/api/pizzas/add` - Add pizza
 
@@ -96,10 +108,12 @@ REACT_APP_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ## 🎉 Success Indicators:
 
 ### Backend Service ✅
+
 - Health check: `https://pizzahub-backend.onrender.com/api/bases`
 - Should return JSON array of pizza bases
 
-### Frontend Service ✅  
+### Frontend Service ✅
+
 - Website loads: `https://pizzahub-frontend.onrender.com`
 - Should show complete PizzaHub homepage
 - Login/Registration should work
@@ -110,15 +124,18 @@ REACT_APP_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ## 🔍 Troubleshooting:
 
 ### If Backend shows "API is running":
+
 - ✅ **This is CORRECT!** Backend सिर्फ API serve करता है
 - Browser में visit करने पर यही message दिखना चाहिए
 
 ### If Frontend doesn't load:
+
 - Check build logs for errors
 - Verify environment variables
 - Ensure backend URL is correct
 
 ### If Pizza ordering fails:
+
 - Check backend logs
 - Verify MongoDB connection
 - Test API endpoints manually

@@ -3,6 +3,7 @@
 ## 🎯 **How to Add Environment Variables in Render Dashboard:**
 
 ### **Step-by-Step Process:**
+
 1. **Login** to Render.com
 2. **Select your service** (Backend or Frontend)
 3. **Click "Environment" tab**
@@ -72,6 +73,7 @@ Value: 1.0.0
 ## 📸 **Visual Guide:**
 
 ### **Render Dashboard Interface:**
+
 ```
 ┌─────────────────────────────────────┐
 │ Environment Variables               │
@@ -93,16 +95,19 @@ Value: 1.0.0
 ## ⚠️ **Important Notes:**
 
 ### **Name Field:**
+
 - Exact variable name (case-sensitive)
 - No spaces around the name
 - Copy exactly as shown in tables
 
 ### **Value Field:**
+
 - Complete value including URLs, numbers, strings
 - No quotes needed around strings
 - Copy exactly as shown in tables
 
 ### **Common Mistakes:**
+
 - ❌ Adding spaces around = sign
 - ❌ Adding quotes around values
 - ❌ Typos in variable names
@@ -113,16 +118,19 @@ Value: 1.0.0
 ## ✅ **Verification Steps:**
 
 ### **After Adding All Variables:**
+
 1. **Check Environment tab** - All variables should be listed
 2. **Trigger redeploy** - Changes take effect after deployment
 3. **Check service logs** - Look for any environment-related errors
 4. **Test functionality** - Verify that features work correctly
 
 ### **Backend Verification:**
+
 - Visit: `https://your-backend-name.onrender.com`
 - Should show: "API is running"
 
 ### **Frontend Verification:**
+
 - Visit: `https://your-frontend-name.onrender.com`
 - Should show: Complete PizzaHub website
 - Test login, pizza ordering, etc.
@@ -132,6 +140,7 @@ Value: 1.0.0
 ## 🔄 **Update Process:**
 
 ### **To Update Backend URL in Frontend:**
+
 1. **Deploy backend first** and get actual URL
 2. **Update REACT_APP_API_URL** in frontend environment
 3. **Change value** from `https://pizzahub-backend.onrender.com/api` to `https://your-actual-backend-name.onrender.com/api`

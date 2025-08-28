@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "pizzahub-frontend",
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ],
+  "installCommand": "cd frontend && npm install",
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/build",
+  "framework": "create-react-app",
+  "env": {
+    "REACT_APP_API_URL": "https://your-backend-url/api",
+    "REACT_APP_RAZORPAY_KEY_ID": "rzp_test_1234567890abcd"
+  }
+}

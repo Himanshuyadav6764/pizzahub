@@ -3,6 +3,7 @@
 ## 🎯 **Static Site Settings:**
 
 ### **Service Configuration:**
+
 ```
 Service Name: pizzahub-frontend
 Service Type: Static Site (NOT Web Service)
@@ -13,6 +14,7 @@ Root Directory: [Leave Empty]
 ```
 
 ### **Build Settings:**
+
 ```
 Build Command: cd frontend && npm install && npm run build
 Publish Directory: frontend/build
@@ -20,6 +22,7 @@ Start Command: [LEAVE EMPTY - NOT NEEDED]
 ```
 
 ### **Environment Variables:**
+
 ```
 REACT_APP_API_URL=https://pizzahub-backend.onrender.com/api
 REACT_APP_RAZORPAY_KEY_ID=rzp_test_1234567890abcd
@@ -32,7 +35,9 @@ REACT_APP_VERSION=1.0.0
 ## ⚡ **Why No Start Command?**
 
 ### **Static Site Process:**
-1. **Build Phase:** 
+
+1. **Build Phase:**
+
    - Runs `cd frontend && npm install && npm run build`
    - Creates optimized production files in `frontend/build/`
    - Includes HTML, CSS, JS, images
@@ -43,6 +48,7 @@ REACT_APP_VERSION=1.0.0
    - Just static file hosting
 
 ### **Comparison:**
+
 ```
 🔧 Backend (Web Service):
 Build: cd backend && npm install
@@ -58,19 +64,23 @@ Start: [NONE] ← Render serves static files automatically
 ## ✅ **Correct Render Dashboard Setup:**
 
 ### **Step 1: Create Static Site**
+
 - Click "New +" → "Static Site" (NOT Web Service)
 - Connect GitHub repository
 
 ### **Step 2: Configure Build**
+
 - **Build Command:** `cd frontend && npm install && npm run build`
 - **Publish Directory:** `frontend/build`
 - **Start Command:** Leave completely empty
 
 ### **Step 3: Environment Variables**
-- Add all REACT_APP_* variables
+
+- Add all REACT*APP*\* variables
 - These are used during build process
 
 ### **Step 4: Deploy**
+
 - Click "Create Static Site"
 - Wait for build to complete
 - Your site will be live!

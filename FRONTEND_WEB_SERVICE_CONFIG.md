@@ -3,6 +3,7 @@
 ## 🔧 **If you want to deploy Frontend as Web Service:**
 
 ### **Service Settings:**
+
 ```
 Service Type: Web Service (NOT Static Site)
 Name: pizzahub-frontend
@@ -12,12 +13,14 @@ Branch: master
 ```
 
 ### **Build & Start Commands:**
+
 ```
 Build Command: cd frontend && npm install
 Start Command: cd frontend && npm start
 ```
 
 ### **Environment Variables:**
+
 ```
 PORT=3000
 REACT_APP_API_URL=https://pizzahub-backend.onrender.com/api
@@ -31,6 +34,7 @@ REACT_APP_VERSION=1.0.0
 ## ⚡ **Web Service vs Static Site Comparison:**
 
 ### **🌐 Web Service (with Start Command):**
+
 ```
 ✅ Pros:
 - Runs React development server
@@ -45,6 +49,7 @@ REACT_APP_VERSION=1.0.0
 ```
 
 ### **📁 Static Site (Recommended):**
+
 ```
 ✅ Pros:
 - Faster loading
@@ -63,6 +68,7 @@ REACT_APP_VERSION=1.0.0
 ## 🎯 **For Production - Both Configurations:**
 
 ### **Configuration A: Web Service**
+
 ```
 Service Type: Web Service
 Build Command: cd frontend && npm install
@@ -74,8 +80,9 @@ Environment Variables:
 ```
 
 ### **Configuration B: Static Site (Better)**
+
 ```
-Service Type: Static Site  
+Service Type: Static Site
 Build Command: cd frontend && npm install && npm run build
 Publish Directory: frontend/build
 Environment Variables:

@@ -3,13 +3,14 @@
 ## 📋 **Copy-Paste Ready Environment Variables**
 
 ### 🔧 **Backend Environment Variables**
+
 Copy these exact values to Render Dashboard → Backend Service → Environment tab:
 
 ```
 NODE_ENV
 production
 
-PORT  
+PORT
 5000
 
 MONGO_URI
@@ -21,7 +22,7 @@ pizzahub-super-secret-jwt-key-for-production-2024
 RAZORPAY_KEY_ID
 rzp_test_1234567890abcd
 
-RAZORPAY_KEY_SECRET  
+RAZORPAY_KEY_SECRET
 1234567890abcd1234567890abcd12
 
 EMAIL_USER
@@ -36,7 +37,8 @@ https://pizzahub-frontend.onrender.com
 
 ---
 
-### 🌐 **Frontend Environment Variables**  
+### 🌐 **Frontend Environment Variables**
+
 Copy these exact values to Render Dashboard → Frontend Service → Environment tab:
 
 ```
@@ -69,11 +71,12 @@ REACT_APP_VERSION
 8. **Deploy/Redeploy** the service
 
 ### Visual Guide:
+
 ```
 Render Dashboard
 ├── Your Service Name
 ├── Environment Tab ← Click Here
-├── Add Environment Variable ← Click Here  
+├── Add Environment Variable ← Click Here
 ├── Key: NODE_ENV | Value: production ← Enter These
 └── Save Changes ← Click Here
 ```
@@ -83,8 +86,9 @@ Render Dashboard
 ## ⚡ **Quick Copy Commands:**
 
 ### For Backend (copy one by one):
+
 - `NODE_ENV` = `production`
-- `PORT` = `5000`  
+- `PORT` = `5000`
 - `MONGO_URI` = `mongodb+srv://pizzahub:pizzahub123@pizzacluster.vo9paoo.mongodb.net/pizzadb?retryWrites=true&w=majority`
 - `JWT_SECRET` = `pizzahub-super-secret-jwt-key-for-production-2024`
 - `RAZORPAY_KEY_ID` = `rzp_test_1234567890abcd`
@@ -94,9 +98,10 @@ Render Dashboard
 - `FRONTEND_URL` = `https://pizzahub-frontend.onrender.com`
 
 ### For Frontend (copy one by one):
+
 - `REACT_APP_API_URL` = `https://pizzahub-backend.onrender.com/api`
 - `REACT_APP_RAZORPAY_KEY_ID` = `rzp_test_1234567890abcd`
-- `REACT_APP_NAME` = `PizzaHub`  
+- `REACT_APP_NAME` = `PizzaHub`
 - `REACT_APP_VERSION` = `1.0.0`
 
 ---
@@ -112,5 +117,6 @@ Render Dashboard
 ## ✅ **Verification:**
 
 After deployment, test these URLs:
+
 - **Backend:** `https://your-backend-name.onrender.com` → Should show "API is running"
 - **Frontend:** `https://your-frontend-name.onrender.com` → Should show PizzaHub website
